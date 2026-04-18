@@ -148,12 +148,12 @@ export default function FAQ() {
               <StaggerItem key={item.id}>
                 <AccordionItem
                   value={item.id}
-                  className="border-border/60 group rounded-xl mb-3 overflow-hidden transition-colors data-[state=open]:bg-silver-50/60 dark:data-[state=open]:bg-silver-950/20 data-[state=open]:border-silver-200/50 dark:data-[state=open]:border-silver-800/30 data-[state=closed]:bg-card data-[state=closed]:hover:bg-muted/30"
+                  className="border-border/60 group rounded-xl mb-3 overflow-hidden transition-colors data-[state=open]:bg-silver-50/60 dark:data-[state=open]:bg-neutral-800/60 data-[state=open]:border-silver-200/50 dark:data-[state=open]:border-neutral-700/40 data-[state=closed]:bg-card dark:data-[state=closed]:bg-neutral-900/40 data-[state=closed]:hover:bg-muted/30 dark:data-[state=closed]:hover:bg-neutral-800/30"
                 >
-                  <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg font-semibold text-foreground hover:no-underline data-[state=open]:text-silver-600 dark:data-[state=open]:text-silver-400 [&>svg]:text-muted-foreground data-[state=open]:[&>svg]:text-silver-500 dark:data-[state=open]:[&>svg]:text-silver-400">
+                  <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg font-semibold text-foreground dark:text-white hover:no-underline data-[state=open]:text-silver-700 dark:data-[state=open]:text-silver-300 [&>svg]:text-muted-foreground dark:[&>svg]:text-neutral-400 data-[state=open]:[&>svg]:text-silver-500 dark:data-[state=open]:[&>svg]:text-silver-300">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-5 sm:px-6 pb-5 text-sm sm:text-base leading-relaxed text-muted-foreground data-[state=open]:text-foreground/80">
+                  <AccordionContent className="px-5 sm:px-6 pb-5 text-sm sm:text-base leading-relaxed text-muted-foreground dark:text-neutral-300 data-[state=open]:text-foreground/80 dark:data-[state=open]:text-white/90">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
