@@ -29,8 +29,8 @@ const itemVariants = {
 };
 
 const stats = [
-  { value: '500+', label: 'Proyek Selesai' },
-  { value: '15+', label: 'Tahun Pengalaman' },
+  { value: '30+', label: 'Proyek Selesai' },
+  { value: '5+', label: 'Tahun Pengalaman' },
   { value: '98%', label: 'Klien Puas' },
 ];
 
@@ -61,8 +61,8 @@ export default function Hero() {
         <div className="max-w-2xl lg:max-w-3xl">
           {/* Badge */}
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-300 backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-300 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-400 animate-pulse" />
               Interior Design & Building
             </span>
           </motion.div>
@@ -73,7 +73,7 @@ export default function Hero() {
             className="font-[var(--font-playfair)] text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Wujudkan{' '}
-            <span className="text-amber-400">Ruangan Impian</span>{' '}
+            <span className="text-gold-400 dark:text-gold-400">Ruangan Impian</span>{' '}
             Anda
           </motion.h1>
 
@@ -93,7 +93,7 @@ export default function Hero() {
             <Button
               size="lg"
               asChild
-              className="h-12 rounded-full bg-amber-500 px-8 text-base font-semibold text-white shadow-lg shadow-amber-500/25 transition-all hover:bg-amber-600 hover:shadow-xl hover:shadow-amber-500/30 sm:h-13"
+              className="h-12 rounded-full bg-gold-500 px-8 text-base font-semibold text-white shadow-lg shadow-gold-500/25 transition-all hover:bg-gold-600 hover:shadow-xl hover:shadow-gold-500/30 sm:h-13"
             >
               <a href="#kontak">
                 <Phone className="mr-2 size-4" />
@@ -127,7 +127,7 @@ export default function Hero() {
                   <div className="hidden sm:block h-10 w-px bg-white/20" />
                 )}
                 <div>
-                  <p className="font-[var(--font-playfair)] text-3xl font-bold text-amber-400 sm:text-4xl">
+                  <p className="font-[var(--font-playfair)] text-3xl font-bold text-gold-400 dark:text-gold-400 sm:text-4xl">
                     {stat.value}
                   </p>
                   <p className="mt-1 text-sm text-white/60 sm:text-base">

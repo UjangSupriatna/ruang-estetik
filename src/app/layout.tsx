@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ruangan Elegan - Jasa Desain Interior & Bangunan Profesional",
+  title: "Ruangan Elegan - Jasa Desain Interior & Bangunan | Bandung",
   description:
-    "Jasa desain interior dan bangunan profesional. Kami mengubah ruangan impian Anda menjadi kenyataan dengan desain yang elegan dan fungsional.",
+    "Jasa desain interior dan bangunan profesional di Bandung. Wujudkan ruangan impian Anda dengan desain yang elegan dan fungsional. Konsultasi gratis!",
   keywords: [
     "desain interior",
     "jasa bangunan",
@@ -28,12 +28,14 @@ export const metadata: Metadata = {
     "interior design",
     "konstruksi",
     "konsultasi desain",
+    "Bandung",
+    "Jawa Barat",
   ],
   authors: [{ name: "Ruangan Elegan" }],
   openGraph: {
-    title: "Ruangan Elegan - Jasa Desain Interior & Bangunan",
+    title: "Ruangan Elegan - Jasa Desain Interior & Bangunan | Bandung",
     description:
-      "Mengubah ruangan impian Anda menjadi kenyataan dengan desain yang elegan dan fungsional.",
+      "Wujudkan ruangan impian Anda dengan desain yang elegan dan fungsional. Berdiri sejak 2020.",
     type: "website",
   },
 };

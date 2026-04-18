@@ -41,7 +41,7 @@ function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
-      className="size-9 text-foreground/70 hover:text-foreground hover:bg-amber-100 dark:hover:bg-amber-900/20"
+      className="size-9 text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
@@ -150,15 +150,15 @@ export default function Navbar() {
             onClick={(e) => scrollToSection(e, '#beranda')}
             className="group flex items-center gap-2.5 transition-opacity hover:opacity-80"
           >
-            <div className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-amber-600 to-amber-700 shadow-sm">
-              <Gem className="size-5 text-amber-50" />
+            <div className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-900 dark:from-neutral-400 dark:to-neutral-300 shadow-sm">
+              <Gem className="size-5 text-gold-50" />
             </div>
             <span
               className="text-xl sm:text-2xl font-bold tracking-tight text-foreground"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
               Ruangan{' '}
-              <span className="text-amber-700 dark:text-amber-500">Elegan</span>
+              <span className="text-gold-500 dark:text-gold-400">Elegan</span>
             </span>
           </a>
 
@@ -174,15 +174,15 @@ export default function Navbar() {
                   onClick={(e) => scrollToSection(e, link.href)}
                   className={`relative px-3.5 py-2 text-sm font-medium transition-colors rounded-md ${
                     isActive
-                      ? 'text-amber-700 dark:text-amber-400'
-                      : 'text-foreground/70 hover:text-foreground hover:bg-amber-50 dark:hover:bg-amber-900/10'
+                      ? 'text-gold-600 dark:text-gold-400'
+                      : 'text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800'
                   }`}
                 >
                   {link.label}
                   {isActive && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-amber-600 dark:bg-amber-400 rounded-full"
+                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold-500 dark:bg-gold-400 rounded-full"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -196,7 +196,7 @@ export default function Navbar() {
             <ThemeToggle />
             <Button
               asChild
-              className="bg-amber-600 hover:bg-amber-700 text-white shadow-md shadow-amber-600/20 hover:shadow-amber-700/30 transition-all duration-200 font-semibold gap-2 px-5"
+              className="bg-gold-500 hover:bg-gold-600 text-white dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-neutral-900 shadow-md shadow-gold-500/20 hover:shadow-gold-600/30 transition-all duration-200 font-semibold gap-2 px-5"
               size="default"
             >
               <a
@@ -217,7 +217,7 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="size-9 text-foreground/70 hover:text-foreground hover:bg-amber-100 dark:hover:bg-amber-900/20"
+                  className="size-9 text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800"
                   aria-label="Open menu"
                 >
                   <Menu className="size-5" />
@@ -227,15 +227,15 @@ export default function Navbar() {
                 <SheetHeader className="p-6 pb-4 border-b border-border/50">
                   <SheetTitle>
                     <div className="flex items-center gap-2.5">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-amber-600 to-amber-700">
-                        <Gem className="size-5 text-amber-50" />
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-900 dark:from-neutral-400 dark:to-neutral-300">
+                        <Gem className="size-5 text-gold-50" />
                       </div>
                       <span
                         className="text-xl font-bold tracking-tight text-foreground"
                         style={{ fontFamily: 'var(--font-playfair)' }}
                       >
                         Ruangan{' '}
-                        <span className="text-amber-700 dark:text-amber-500">
+                        <span className="text-gold-500 dark:text-gold-400">
                           Elegan
                         </span>
                       </span>
@@ -260,8 +260,8 @@ export default function Navbar() {
                             onClick={(e) => scrollToSection(e, link.href)}
                             className={`flex items-center px-6 py-3 text-base font-medium transition-colors ${
                               isActive
-                                ? 'text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/15 border-r-2 border-amber-600 dark:border-amber-400'
-                                : 'text-foreground/70 hover:text-foreground hover:bg-amber-50/50 dark:hover:bg-amber-900/10'
+                                ? 'text-gold-500 dark:text-gold-400 bg-gold-50 dark:bg-gold-900/15 border-r-2 border-gold-500 dark:border-gold-400'
+                                : 'text-foreground/70 hover:text-foreground hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50'
                             }`}
                           >
                             {link.label}
@@ -276,7 +276,7 @@ export default function Navbar() {
                   <SheetClose asChild>
                     <Button
                       asChild
-                      className="w-full bg-amber-600 hover:bg-amber-700 text-white shadow-md shadow-amber-600/20 font-semibold gap-2 h-11"
+                      className="w-full bg-gold-500 hover:bg-gold-600 text-white dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-neutral-900 shadow-md shadow-gold-500/20 hover:shadow-gold-600/30 font-semibold gap-2 h-11"
                       size="default"
                     >
                       <a

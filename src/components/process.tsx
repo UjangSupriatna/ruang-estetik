@@ -100,18 +100,18 @@ export default function Process() {
           {/* Connecting Line — horizontal on desktop */}
           <div className="absolute top-24 left-0 hidden w-full lg:block">
             <div className="mx-auto max-w-4xl">
-              <div className="relative h-0.5 w-full bg-amber-200">
-                <div className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-amber-400 bg-white" />
-                <div className="absolute left-1/3 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-amber-400 bg-white" />
-                <div className="absolute left-2/3 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-amber-400 bg-white" />
-                <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-amber-400 bg-white" />
+              <div className="relative h-0.5 w-full bg-gold-200 dark:bg-gold-800">
+                <div className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-gold-400 bg-white" />
+                <div className="absolute left-1/3 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-gold-400 bg-white" />
+                <div className="absolute left-2/3 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-gold-400 bg-white" />
+                <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-gold-400 bg-white" />
               </div>
             </div>
           </div>
 
           {/* Connecting Line — vertical on mobile/tablet */}
           <div className="absolute top-24 bottom-24 left-1/2 -translate-x-1/2 lg:hidden">
-            <div className="h-full w-0.5 bg-amber-200" />
+            <div className="h-full w-0.5 bg-gold-200 dark:bg-gold-800" />
           </div>
 
           {/* Steps Grid — vertical on mobile, horizontal on desktop */}
@@ -125,7 +125,7 @@ export default function Process() {
                   className="relative flex w-full max-w-xs flex-col items-center text-center lg:w-1/4 lg:max-w-none lg:px-4"
                 >
                   {/* Step Number Circle */}
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-500 shadow-lg shadow-amber-500/25 ring-4 ring-amber-100">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 shadow-lg shadow-gold-500/25 ring-4 ring-gold-100 dark:ring-gold-900/30">
                     <span className="text-lg font-bold text-white">
                       {step.number}
                     </span>
@@ -134,7 +134,7 @@ export default function Process() {
                   {/* Icon */}
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-card shadow-md ring-1 ring-border/60">
                     <IconComponent
-                      className="h-6 w-6 text-amber-600"
+                      className="h-6 w-6 text-gold-500 dark:text-gold-400"
                       strokeWidth={1.8}
                     />
                   </div>

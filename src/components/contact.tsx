@@ -10,6 +10,7 @@ import {
   Send,
   CheckCircle2,
   Loader2,
+  MessageCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,24 +25,26 @@ import {
 } from '@/components/ui/select';
 import { Card, CardContent } from '@/components/ui/card';
 
+const WHATSAPP_NUMBER = '6283862295779';
+
 const contactInfo = [
   {
     icon: Phone,
-    title: 'Telepon',
-    detail: '+62 812-3456-7890',
-    sub: 'Senin - Sabtu, 09:00 - 18:00',
+    title: 'WhatsApp',
+    detail: '+62 838-6229-5779',
+    sub: 'Respon cepat setiap hari',
   },
   {
     icon: Mail,
     title: 'Email',
-    detail: 'info@ruanganelegan.id',
+    detail: 'derrycp37@gmail.com',
     sub: 'Respon dalam 24 jam',
   },
   {
     icon: MapPin,
     title: 'Alamat',
-    detail: 'Jl. Sudirman No. 123',
-    sub: 'Jakarta Selatan, 12190',
+    detail: 'Bandung, Jawa Barat',
+    sub: 'Indonesia',
   },
   {
     icon: Clock,
@@ -85,41 +88,66 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+    // Build WhatsApp message
+    const serviceLabels: Record<string, string> = {
+      interior: 'Desain Interior',
+      renovasi: 'Renovasi Rumah',
+      konstruksi: 'Konstruksi Bangunan',
+      konsultasi: 'Konsultasi Desain',
+    };
 
-      if (res.ok) {
-        setIsSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          budget: '',
-          message: '',
-        });
-        setTimeout(() => setIsSubmitted(false), 5000);
-      }
-    } catch {
-      // Error handling
-    } finally {
-      setIsSubmitting(false);
-    }
+    const budgetLabels: Record<string, string> = {
+      '<50': 'Di bawah Rp 50 Juta',
+      '50-100': 'Rp 50 - 100 Juta',
+      '100-250': 'Rp 100 - 250 Juta',
+      '250-500': 'Rp 250 - 500 Juta',
+      '>500': 'Di atas Rp 500 Juta',
+    };
+
+    const waMessage = `Halo, saya tertarik dengan jasa desain interior & bangunan Anda.
+
+*Nama:* ${formData.name}
+*Email:* ${formData.email}${formData.phone ? `\n*Telepon:* ${formData.phone}` : ''}${formData.service ? `\n*Layanan:* ${serviceLabels[formData.service] || formData.service}` : ''}${formData.budget ? `\n*Anggaran:* ${budgetLabels[formData.budget] || formData.budget}` : ''}
+
+*Detail Proyek:*
+${formData.message}
+
+Terima kasih!`;
+
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+    // Small delay for UX
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    setIsSubmitted(true);
+    setIsSubmitting(false);
+
+    // Open WhatsApp in new tab
+    window.open(waUrl, '_blank');
+
+    // Reset form after a bit
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        budget: '',
+        message: '',
+      });
+    }, 3000);
   };
 
   return (
     <section
       id="kontak"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-white to-amber-50/30 py-20 dark:from-background dark:to-amber-950/10 sm:py-28"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-white to-neutral-50/50 py-20 dark:from-background dark:to-neutral-950/20 sm:py-28"
     >
       {/* Decorative elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 top-20 size-80 rounded-full bg-amber-100/30 dark:bg-amber-900/10" />
-        <div className="absolute -bottom-32 -left-32 size-96 rounded-full bg-amber-100/20 dark:bg-amber-900/5" />
+        <div className="absolute -right-40 top-20 size-80 rounded-full bg-neutral-200/30 dark:bg-neutral-800/10" />
+        <div className="absolute -bottom-32 -left-32 size-96 rounded-full bg-neutral-200/20 dark:bg-neutral-800/5" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -131,15 +159,15 @@ export default function Contact() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-600 dark:text-amber-400">
-            <Send className="size-3.5" />
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-600 dark:text-gold-400">
+            <MessageCircle className="size-3.5" />
             Hubungi Kami
           </span>
           <h2 className="mt-4 font-[var(--font-playfair)] text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Konsultasi Gratis
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Ceritakan proyek impian Anda dan kami akan membantu mewujudkannya
+            Isi form di bawah dan langsung terhubung ke WhatsApp kami
           </p>
         </motion.div>
 
@@ -156,17 +184,17 @@ export default function Contact() {
               {contactInfo.map((item) => (
                 <Card
                   key={item.title}
-                  className="border-amber-100/60 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:shadow-md dark:border-amber-900/30 dark:bg-card/60"
+                  className="border-gold-100/60 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:shadow-md dark:border-gold-900/30 dark:bg-card/60"
                 >
                   <CardContent className="flex items-start gap-4 pt-5">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-400">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-gold-500 dark:bg-neutral-800 dark:text-gold-400">
                       <item.icon className="size-5" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">
                         {item.title}
                       </p>
-                      <p className="text-sm font-medium text-amber-700 dark:text-amber-400">
+                      <p className="text-sm font-medium text-gold-600 dark:text-gold-400">
                         {item.detail}
                       </p>
                       <p className="text-xs text-muted-foreground">
@@ -179,23 +207,23 @@ export default function Contact() {
             </div>
 
             {/* WhatsApp CTA */}
-            <div className="mt-6 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 p-6 text-white shadow-lg">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-neutral-800 to-neutral-900 p-6 text-white shadow-lg dark:from-neutral-700 dark:to-neutral-800">
               <h3 className="font-[var(--font-playfair)] text-lg font-bold">
                 Chat via WhatsApp
               </h3>
-              <p className="mt-2 text-sm text-amber-100">
-                Dapatkan respon cepat langsung dari tim kami
+              <p className="mt-2 text-sm text-neutral-300">
+                Dapatkan respon cepat langsung dari kami
               </p>
               <Button
-                className="mt-4 w-full bg-white text-amber-700 hover:bg-amber-50"
+                className="mt-4 w-full bg-gold-500 text-neutral-900 hover:bg-gold-400 dark:bg-gold-500 dark:text-neutral-900 dark:hover:bg-gold-400 font-semibold"
                 asChild
               >
                 <a
-                  href="https://wa.me/6281234567890"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Phone className="mr-2 size-4" />
+                  <MessageCircle className="mr-2 size-4" />
                   Hubungi via WhatsApp
                 </a>
               </Button>
@@ -210,7 +238,7 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
-            <Card className="border-amber-100/60 bg-white/80 backdrop-blur-sm dark:border-amber-900/30 dark:bg-card/80">
+            <Card className="border-gold-100/60 bg-white/80 backdrop-blur-sm dark:border-gold-900/30 dark:bg-card/80">
               <CardContent className="p-6 sm:p-8">
                 {isSubmitted ? (
                   <motion.div
@@ -219,13 +247,12 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <CheckCircle2 className="size-16 text-green-500" />
+                    <CheckCircle2 className="size-16 text-gold-500" />
                     <h3 className="mt-4 font-[var(--font-playfair)] text-2xl font-bold text-foreground">
                       Terima Kasih!
                     </h3>
                     <p className="mt-2 text-muted-foreground">
-                      Pesan Anda telah terkirim. Tim kami akan menghubungi Anda
-                      dalam 24 jam.
+                      Anda akan diarahkan ke WhatsApp. Tim kami siap membantu Anda!
                     </p>
                   </motion.div>
                 ) : (
@@ -240,35 +267,34 @@ export default function Contact() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="border-amber-200/60 focus:border-amber-400 focus:ring-amber-400 dark:border-amber-900/40"
+                          className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">Email</Label>
                         <Input
                           id="email"
                           name="email"
                           type="email"
                           placeholder="nama@email.com"
-                          required
                           value={formData.email}
                           onChange={handleChange}
-                          className="border-amber-200/60 focus:border-amber-400 focus:ring-amber-400 dark:border-amber-900/40"
+                          className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
                         />
                       </div>
                     </div>
 
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="phone">No. Telepon</Label>
+                        <Label htmlFor="phone">No. Telepon / WhatsApp</Label>
                         <Input
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="+62 812-xxxx-xxxx"
+                          placeholder="+62 838-xxxx-xxxx"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="border-amber-200/60 focus:border-amber-400 focus:ring-amber-400 dark:border-amber-900/40"
+                          className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
                         />
                       </div>
                       <div className="space-y-2">
@@ -282,7 +308,7 @@ export default function Contact() {
                             }))
                           }
                         >
-                          <SelectTrigger className="border-amber-200/60 focus:border-amber-400 focus:ring-amber-400 dark:border-amber-900/40">
+                          <SelectTrigger className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40">
                             <SelectValue placeholder="Pilih layanan" />
                           </SelectTrigger>
                           <SelectContent>
@@ -311,7 +337,7 @@ export default function Contact() {
                           setFormData((prev) => ({ ...prev, budget: value }))
                         }
                       >
-                        <SelectTrigger className="border-amber-200/60 focus:border-amber-400 focus:ring-amber-400 dark:border-amber-900/40">
+                        <SelectTrigger className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40">
                           <SelectValue placeholder="Pilih range anggaran" />
                         </SelectTrigger>
                         <SelectContent>
@@ -344,7 +370,7 @@ export default function Contact() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="border-amber-200/60 focus:border-amber-400 focus:ring-amber-400 dark:border-amber-900/40"
+                        className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
                       />
                     </div>
 
@@ -352,24 +378,23 @@ export default function Contact() {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-amber-600 text-white hover:bg-amber-700 dark:bg-amber-600 dark:hover:bg-amber-500"
+                      className="w-full bg-gold-500 text-neutral-900 hover:bg-gold-600 dark:bg-gold-500 dark:text-neutral-900 dark:hover:bg-gold-400 font-semibold"
                     >
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 size-4 animate-spin" />
-                          Mengirim...
+                          Mengarahkan...
                         </>
                       ) : (
                         <>
-                          <Send className="mr-2 size-4" />
-                          Kirim Pesan
+                          <MessageCircle className="mr-2 size-4" />
+                          Kirim via WhatsApp
                         </>
                       )}
                     </Button>
 
                     <p className="text-center text-xs text-muted-foreground">
-                      Konsultasi awal GRATIS. Kami akan merespon dalam 24 jam
-                      kerja.
+                      Klik tombol di atas untuk langsung terhubung ke WhatsApp kami
                     </p>
                   </form>
                 )}

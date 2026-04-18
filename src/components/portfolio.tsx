@@ -64,10 +64,10 @@ const portfolioItems: PortfolioItem[] = [
 ]
 
 const categoryBadgeStyles: Record<Category, string> = {
-  'Semua': 'bg-amber-100 text-amber-800 border-amber-200 hover:bg-amber-100',
-  'Rumah Tinggal': 'bg-amber-100 text-amber-800 border-amber-200 hover:bg-amber-100',
-  'Komersial': 'bg-warm-100 text-warm-700 border-warm-200 hover:bg-warm-100',
-  'Renovasi': 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-50',
+  'Semua': 'bg-gold-50 text-gold-700 border-gold-200 hover:bg-gold-50',
+  'Rumah Tinggal': 'bg-gold-50 text-gold-700 border-gold-200 hover:bg-gold-50',
+  'Komersial': 'bg-neutral-100 text-neutral-700 border-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:border-neutral-700',
+  'Renovasi': 'bg-neutral-50 text-neutral-600 border-neutral-200 dark:bg-neutral-800/50 dark:text-neutral-400 dark:border-neutral-700',
 }
 
 function PortfolioCard({ item, index }: { item: PortfolioItem; index: number }) {
@@ -158,7 +158,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-block text-amber-600 font-medium text-sm tracking-wider uppercase mb-3"
+            className="inline-block text-gold-500 dark:text-gold-400 font-medium text-sm tracking-wider uppercase mb-3"
           >
             Portfolio
           </motion.span>
@@ -187,7 +187,7 @@ export default function Portfolio() {
               className={`rounded-full px-5 transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground shadow-md hover:bg-primary/90 hover:shadow-lg'
-                  : 'hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300 dark:hover:bg-amber-950/30 dark:hover:text-amber-400 dark:hover:border-amber-800'
+                  : 'hover:bg-gold-50 hover:text-gold-600 hover:border-gold-300 dark:hover:bg-gold-950/30 dark:hover:text-gold-400 dark:hover:border-gold-800'
               }`}
             >
               {category}
@@ -228,7 +228,7 @@ export default function Portfolio() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-14 md:mt-20 flex justify-center"
         >
-          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600" />
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600" />
         </motion.div>
       </div>
     </section>

@@ -76,7 +76,7 @@ function StarRating({ rating }: { rating: number }) {
           className={cn(
             'size-4',
             i < rating
-              ? 'fill-amber-400 text-amber-400'
+              ? 'fill-gold-400 text-gold-400'
               : 'fill-muted text-muted'
           )}
         />
@@ -121,12 +121,12 @@ export default function Testimonials() {
   return (
     <section
       id="testimoni"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-amber-50/50 to-white py-20 dark:from-amber-950/20 dark:to-background sm:py-28"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-gold-50/50 to-white py-20 dark:from-gold-950/20 dark:to-background sm:py-28"
     >
       {/* Decorative background elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-32 -top-32 size-96 rounded-full bg-amber-100/40 dark:bg-amber-900/10" />
-        <div className="absolute -bottom-24 -left-24 size-72 rounded-full bg-amber-100/30 dark:bg-amber-900/10" />
+        <div className="absolute -right-32 -top-32 size-96 rounded-full bg-neutral-200/40 dark:bg-neutral-800/20" />
+        <div className="absolute -bottom-24 -left-24 size-72 rounded-full bg-neutral-200/30 dark:bg-neutral-800/10" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -138,8 +138,8 @@ export default function Testimonials() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-600 dark:text-amber-400">
-            <Star className="size-3.5 fill-amber-500 text-amber-500" />
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-600 dark:text-gold-400">
+            <Star className="size-3.5 fill-gold-500 text-gold-500" />
             Testimoni Klien
           </span>
           <h2 className="mt-4 font-[var(--font-playfair)] text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
@@ -180,11 +180,11 @@ export default function Testimonials() {
                   key={index}
                   className="pl-4 sm:pl-6 basis-full md:basis-1/2 lg:basis-1/3"
                 >
-                  <Card className="h-full border-amber-100/60 bg-white/80 backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg dark:border-amber-900/30 dark:bg-card/80">
+                  <Card className="h-full border-gold-100/60 bg-white/80 backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg dark:border-gold-900/30 dark:bg-card/80">
                     <CardContent className="flex h-full flex-col gap-5 pt-6">
                       {/* Quote Icon */}
                       <div className="flex items-start justify-between">
-                        <Quote className="size-10 fill-amber-100 text-amber-500 dark:fill-amber-900/40 dark:text-amber-400" />
+                        <Quote className="size-10 fill-gold-50 text-gold-500 dark:fill-gold-900/30 dark:text-gold-400" />
                         <StarRating rating={testimonial.rating} />
                       </div>
 
@@ -194,9 +194,9 @@ export default function Testimonials() {
                       </p>
 
                       {/* Author Info */}
-                      <div className="flex items-center gap-3 border-t border-amber-100/60 pt-4 dark:border-amber-900/20">
+                      <div className="flex items-center gap-3 border-t border-gold-100/60 pt-4 dark:border-gold-900/20">
                         {/* Avatar */}
-                        <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">
+                        <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gold-50 text-sm font-bold text-gold-600 dark:bg-gold-900/30 dark:text-gold-300">
                           {getInitials(testimonial.name)}
                         </div>
                         <div className="min-w-0">
@@ -218,7 +218,7 @@ export default function Testimonials() {
             <div className="mt-8 flex items-center justify-center gap-4">
               <button
                 onClick={() => api?.scrollPrev()}
-                className="flex size-10 items-center justify-center rounded-full border border-amber-200 bg-white text-amber-600 shadow-sm transition-all hover:bg-amber-50 hover:shadow-md dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-400 dark:hover:bg-amber-900/60"
+                className="flex size-10 items-center justify-center rounded-full border border-gold-200 bg-white text-gold-500 shadow-sm transition-all hover:bg-gold-50 hover:shadow-md dark:border-gold-900/40 dark:bg-gold-900/60 dark:text-gold-400 dark:hover:bg-gold-900/40"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="size-5" />
@@ -234,8 +234,8 @@ export default function Testimonials() {
                     className={cn(
                       'h-2 rounded-full transition-all duration-300',
                       current === i
-                        ? 'w-6 bg-amber-500 dark:bg-amber-400'
-                        : 'w-2 bg-amber-200 hover:bg-amber-300 dark:bg-amber-800 dark:hover:bg-amber-700'
+                        ? 'w-6 bg-gold-500 dark:bg-gold-400'
+                        : 'w-2 bg-gold-200 hover:bg-gold-300 dark:bg-gold-800 dark:hover:bg-gold-700'
                     )}
                   />
                 ))}
@@ -243,7 +243,7 @@ export default function Testimonials() {
 
               <button
                 onClick={() => api?.scrollNext()}
-                className="flex size-10 items-center justify-center rounded-full border border-amber-200 bg-white text-amber-600 shadow-sm transition-all hover:bg-amber-50 hover:shadow-md dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-400 dark:hover:bg-amber-900/60"
+                className="flex size-10 items-center justify-center rounded-full border border-gold-200 bg-white text-gold-500 shadow-sm transition-all hover:bg-gold-50 hover:shadow-md dark:border-gold-900/40 dark:bg-gold-900/60 dark:text-gold-400 dark:hover:bg-gold-900/40"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="size-5" />

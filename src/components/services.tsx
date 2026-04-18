@@ -95,7 +95,7 @@ export default function Services() {
             const IconComponent = service.icon
             return (
               <motion.div key={service.title} variants={cardVariants}>
-                <Card className="group overflow-hidden border-border/60 bg-card py-0 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-amber-900/10 dark:hover:shadow-amber-500/5">
+                <Card className="group overflow-hidden border-border/60 bg-card py-0 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-neutral-900/10 dark:hover:shadow-gold-500/5">
                   {/* Image */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
@@ -111,7 +111,7 @@ export default function Services() {
                   <CardContent className="relative px-5 pb-6 pt-0">
                     {/* Icon */}
                     <div className="-mt-8 mb-4 flex">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 shadow-lg shadow-amber-500/30 transition-transform duration-300 group-hover:scale-110">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-500 shadow-lg shadow-gold-500/30 transition-transform duration-300 group-hover:scale-110">
                         <IconComponent className="h-6 w-6 text-white" strokeWidth={1.8} />
                       </div>
                     </div>
@@ -132,7 +132,7 @@ export default function Services() {
                     {/* Link */}
                     <a
                       href="#"
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-amber-600 dark:text-amber-400 transition-colors duration-200 hover:text-amber-700 dark:hover:text-amber-300"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-gold-500 dark:text-gold-400 transition-colors duration-200 hover:text-gold-600 dark:hover:text-gold-300"
                     >
                       Pelajari Lebih Lanjut
                       <span className="transition-transform duration-200 group-hover:translate-x-1">
