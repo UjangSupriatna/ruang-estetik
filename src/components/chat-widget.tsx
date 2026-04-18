@@ -14,7 +14,7 @@ export default function ChatWidget() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Expanded Menu */}
+      {/* Expanded Menu - Icon Only */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -22,9 +22,9 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex flex-col gap-2.5 mb-1"
+            className="flex flex-col gap-3 mb-1"
           >
-            {/* AI Assistant */}
+            {/* AI Assistant - Icon Only */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -33,7 +33,6 @@ export default function ChatWidget() {
               <button
                 onClick={() => {
                   setIsOpen(false)
-                  // Fallback: scroll to contact section
                   const el = document.getElementById('kontak')
                   if (el) {
                     const navHeight = 80
@@ -41,19 +40,14 @@ export default function ChatWidget() {
                     window.scrollTo({ top, behavior: 'smooth' })
                   }
                 }}
-                className="group flex items-center gap-3 rounded-full bg-neutral-800 dark:bg-neutral-700 pl-4 pr-5 py-3 shadow-lg shadow-black/20 transition-all duration-200 hover:bg-neutral-700 dark:hover:bg-neutral-600 hover:shadow-xl"
+                className="group flex size-12 items-center justify-center rounded-full bg-neutral-800 dark:bg-neutral-700 shadow-lg shadow-black/20 transition-all duration-200 hover:bg-neutral-700 dark:hover:bg-neutral-600 hover:shadow-xl hover:scale-110"
+                title="AI Assistant"
               >
-                <div className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-silver-400 to-silver-600">
-                  <Bot className="size-4.5 text-white" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-semibold text-white leading-tight">AI Assistant</p>
-                  <p className="text-[11px] text-neutral-400 leading-tight">Tanya tentang desain</p>
-                </div>
+                <Bot className="size-5 text-white" />
               </button>
             </motion.div>
 
-            {/* WhatsApp */}
+            {/* WhatsApp - Icon Only */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -64,15 +58,10 @@ export default function ChatWidget() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="group flex items-center gap-3 rounded-full bg-[#25D366] pl-4 pr-5 py-3 shadow-lg shadow-[#25D366]/20 transition-all duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/30"
+                className="group flex size-12 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-[#25D366]/20 transition-all duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/30 hover:scale-110"
+                title="WhatsApp"
               >
-                <div className="flex size-9 items-center justify-center rounded-full bg-white/20">
-                  <Phone className="size-4.5 text-white" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-semibold text-white leading-tight">WhatsApp</p>
-                  <p className="text-[11px] text-white/80 leading-tight">Chat langsung dengan kami</p>
-                </div>
+                <Phone className="size-5 text-white" />
               </a>
             </motion.div>
           </motion.div>
