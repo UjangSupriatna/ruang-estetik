@@ -10,19 +10,19 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.15,
+      delayChildren: 0.4,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.8,
       ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
@@ -53,7 +53,7 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div
-        className="relative z-20 flex h-full flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32"
+        className="relative z-20 flex h-full flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 pt-24 sm:pt-28"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -62,17 +62,20 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-[var(--font-playfair)] text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white"
+            style={{ fontFamily: 'var(--font-playfair)' }}
           >
-            Wujudkan{' '}
-            <span className="text-gold-400 dark:text-gold-400">Ruangan Impian</span>{' '}
+            Wujudkan
+            <br />
+            <span className="text-gold-400">Ruangan Impian</span>
+            <br />
             Anda
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg md:text-xl"
+            className="mt-8 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg md:text-xl"
           >
             Jasa desain interior dan bangunan profesional yang mengubah visi Anda menjadi kenyataan. Dari konsep hingga penyelesaian, kami hadir untuk Anda.
           </motion.p>
@@ -85,7 +88,7 @@ export default function Hero() {
             <Button
               size="lg"
               asChild
-              className="h-12 rounded-full bg-gold-500 px-8 text-base font-semibold text-white shadow-lg shadow-gold-500/25 transition-all hover:bg-gold-600 hover:shadow-xl hover:shadow-gold-500/30 sm:h-13"
+              className="h-13 rounded-full bg-gold-500 px-8 text-base font-semibold text-white shadow-lg shadow-gold-500/25 transition-all hover:bg-gold-600 hover:shadow-xl hover:shadow-gold-500/30"
             >
               <a href="#kontak">
                 <Phone className="mr-2 size-4" />
@@ -96,7 +99,7 @@ export default function Hero() {
               variant="outline"
               size="lg"
               asChild
-              className="h-12 rounded-full border-white/30 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/15 hover:text-white sm:h-13"
+              className="h-13 rounded-full border-white/30 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/15 hover:text-white"
             >
               <a href="#portfolio">
                 Lihat Portfolio
@@ -109,20 +112,19 @@ export default function Hero() {
         {/* Stats Bar */}
         <motion.div
           variants={itemVariants}
-          className="mt-auto pb-8 pt-16 sm:pb-12"
+          className="mt-auto pb-8 pt-20 sm:pb-12"
         >
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-10 md:gap-16">
             {stats.map((stat, index) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                {/* Divider */}
+              <div key={stat.label} className="flex items-center gap-4">
                 {index > 0 && (
-                  <div className="hidden sm:block h-10 w-px bg-white/20" />
+                  <div className="hidden sm:block h-12 w-px bg-white/20" />
                 )}
                 <div>
-                  <p className="font-[var(--font-playfair)] text-3xl font-bold text-gold-400 dark:text-gold-400 sm:text-4xl">
+                  <p className="text-3xl font-bold text-gold-400 sm:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-sm text-white/60 sm:text-base">
+                  <p className="mt-1 text-sm text-white/50 sm:text-base">
                     {stat.label}
                   </p>
                 </div>

@@ -25,13 +25,17 @@ const navLinks = [
 
 const emptySubscribe = () => () => {}
 
-function ThemeToggle() {
+function ThemeToggle({ scrolled }: { scrolled: boolean }) {
   const { theme, setTheme } = useTheme()
   const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false)
 
+  const textColor = scrolled
+    ? 'text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800'
+    : 'text-white/70 hover:text-white hover:bg-white/10'
+
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" className="size-9" aria-label="Toggle theme">
+      <Button variant="ghost" size="icon" className={`size-9 ${textColor}`} aria-label="Toggle theme">
         <Sun className="size-4" />
       </Button>
     )
@@ -41,7 +45,7 @@ function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
-      className="size-9 text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800"
+      className={`size-9 ${textColor}`}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
@@ -77,14 +81,12 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>('')
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 20)
-  }, [])
-
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Intersection observer for active section tracking
   useEffect(() => {
@@ -136,9 +138,9 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg shadow-black/[0.04] border-b border-border/50'
+          ? 'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-lg shadow-black/[0.06] border-b border-neutral-200/50 dark:border-neutral-700/50'
           : 'bg-transparent'
       }`}
     >
@@ -150,11 +152,17 @@ export default function Navbar() {
             onClick={(e) => scrollToSection(e, '#beranda')}
             className="group flex items-center gap-2.5 transition-opacity hover:opacity-80"
           >
-            <div className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-900 dark:from-neutral-400 dark:to-neutral-300 shadow-sm">
-              <Gem className="size-5 text-gold-50" />
+            <div className={`flex size-9 items-center justify-center rounded-lg shadow-sm transition-colors duration-500 ${
+              scrolled
+                ? 'bg-gradient-to-br from-neutral-700 to-neutral-900 dark:from-neutral-400 dark:to-neutral-300'
+                : 'bg-white/10 backdrop-blur-sm border border-white/20'
+            }`}>
+              <Gem className={`size-5 transition-colors duration-500 ${scrolled ? 'text-gold-50' : 'text-white'}`} />
             </div>
             <span
-              className="text-xl sm:text-2xl font-bold tracking-tight text-foreground"
+              className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-500 ${
+                scrolled ? 'text-foreground' : 'text-white'
+              }`}
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
               Ruangan{' '}
@@ -174,15 +182,21 @@ export default function Navbar() {
                   onClick={(e) => scrollToSection(e, link.href)}
                   className={`relative px-3.5 py-2 text-sm font-medium transition-colors rounded-md ${
                     isActive
-                      ? 'text-gold-600 dark:text-gold-400'
-                      : 'text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                      ? scrolled
+                        ? 'text-gold-600 dark:text-gold-400'
+                        : 'text-gold-400'
+                      : scrolled
+                        ? 'text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                        : 'text-white/70 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}
                   {isActive && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold-500 dark:bg-gold-400 rounded-full"
+                      className={`absolute bottom-0 left-3 right-3 h-0.5 rounded-full transition-colors duration-500 ${
+                        scrolled ? 'bg-gold-500 dark:bg-gold-400' : 'bg-gold-400'
+                      }`}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -193,7 +207,7 @@ export default function Navbar() {
 
           {/* Desktop Right Actions */}
           <div className="hidden lg:flex items-center gap-2">
-            <ThemeToggle />
+            <ThemeToggle scrolled={scrolled} />
             <Button
               asChild
               className="bg-gold-500 hover:bg-gold-600 text-white dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-neutral-900 shadow-md shadow-gold-500/20 hover:shadow-gold-600/30 transition-all duration-200 font-semibold gap-2 px-5"
@@ -211,13 +225,17 @@ export default function Navbar() {
 
           {/* Mobile Actions */}
           <div className="flex lg:hidden items-center gap-1.5">
-            <ThemeToggle />
+            <ThemeToggle scrolled={scrolled} />
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="size-9 text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  className={`size-9 transition-colors duration-500 ${
+                    scrolled
+                      ? 'text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }`}
                   aria-label="Open menu"
                 >
                   <Menu className="size-5" />
