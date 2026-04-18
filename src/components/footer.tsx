@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="space-y-5">
             <div>
               <h3 className="font-[var(--font-playfair)] text-2xl font-bold text-white">
-                Ruangan Elegan
+                Ruang Estetik
               </h3>
             </div>
             <p className="text-sm leading-relaxed text-neutral-400">
@@ -150,7 +150,7 @@ export default function Footer() {
       {/* Bottom Footer */}
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
         <p className="text-xs text-neutral-500">
-          © {new Date().getFullYear()} Ruangan Elegan. Hak cipta dilindungi.
+          © {new Date().getFullYear()} Ruang Estetik. Hak cipta dilindungi.
         </p>
         <div className="flex gap-6">
           <Link

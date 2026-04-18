@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     name: 'Budi Santoso',
     role: 'Pemilik Rumah, Jakarta',
     rating: 5,
-    text: 'Hasilnya luar biasa! Tim Ruangan Elegan benar-benar memahami apa yang kami inginkan. Ruang tamu kami sekarang terlihat seperti di majalah interior.',
+    text: 'Hasilnya luar biasa! Tim Ruang Estetik benar-benar memahami apa yang kami inginkan. Ruang tamu kami sekarang terlihat seperti di majalah interior.',
   },
   {
     name: 'Sari Dewi',
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
     name: 'Ahmad Rizki',
     role: 'Pemilik Restoran',
     rating: 5,
-    text: 'Desain interior restoran kami menjadi daya tarik utama pelanggan. Terima kasih Ruangan Elegan atas kreativitas dan dedikasinya.',
+    text: 'Desain interior restoran kami menjadi daya tarik utama pelanggan. Terima kasih Ruang Estetik atas kreativitas dan dedikasinya.',
   },
   {
     name: 'Linda Kusuma',
@@ -54,7 +54,7 @@ const testimonials: Testimonial[] = [
     name: 'Rudi Hartono',
     role: 'Developer Properti',
     rating: 5,
-    text: 'Sudah 3 proyek bersama Ruangan Elegan dan hasilnya selalu konsisten. Kualitas terbaik dengan harga yang wajar.',
+    text: 'Sudah 3 proyek bersama Ruang Estetik dan hasilnya selalu konsisten. Kualitas terbaik dengan harga yang wajar.',
   },
 ];
 

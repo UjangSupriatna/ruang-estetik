@@ -146,7 +146,7 @@ export default function About() {
             <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl shadow-black/10">
               <Image
                 src="/images/about-team.png"
-                alt="Tim profesional Ruangan Elegan"
+                alt="Tim profesional Ruang Estetik"
                 width={640}
                 height={480}
                 className="h-auto w-full object-cover"
@@ -187,7 +187,7 @@ export default function About() {
               variants={itemVariants}
               className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              Sejak 2020, Ruangan Elegan telah menjadi mitra terpercaya dalam mewujudkan ruangan
+              Sejak 2020, Ruang Estetik telah menjadi mitra terpercaya dalam mewujudkan ruangan
               impian. Kami menggabungkan kreativitas dengan keahlian teknis untuk menciptakan
               ruangan yang tidak hanya indah, tetapi juga fungsional.
             </motion.p>

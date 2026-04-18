@@ -40,7 +40,7 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="/images/hero.png"
-        alt="Interior desain elegan oleh Ruangan Elegan"
+        alt="Interior desain estetik oleh Ruang Estetik"
         fill
         className="object-cover object-center"
         priority

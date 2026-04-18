@@ -43,7 +43,7 @@ const faqItems = [
   },
   {
     id: 'faq-6',
-    question: 'Bagaimana cara memulai proyek dengan Ruangan Elegan?',
+    question: 'Bagaimana cara memulai proyek dengan Ruang Estetik?',
     answer:
       'Sangat mudah! Anda bisa mengisi form konsultasi gratis di website kami atau menghubungi kami langsung via telepon/WhatsApp. Tim kami akan menjadwalkan pertemuan awal untuk memahami kebutuhan Anda.',
   },

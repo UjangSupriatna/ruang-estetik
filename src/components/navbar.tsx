@@ -165,8 +165,8 @@ export default function Navbar() {
               }`}
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
-              Ruangan{' '}
-              <span className="text-silver-500 dark:text-silver-400">Elegan</span>
+              Ruang{' '}
+              <span className="text-silver-500 dark:text-silver-400">Estetik</span>
             </span>
           </a>
 
@@ -267,9 +267,9 @@ export default function Navbar() {
                         className="text-xl font-bold tracking-tight text-foreground"
                         style={{ fontFamily: 'var(--font-playfair)' }}
                       >
-                        Ruangan{' '}
+                        Ruang{' '}
                         <span className="text-silver-500 dark:text-silver-400">
-                          Elegan
+                          Estetik
                         </span>
                       </span>
                     </div>
