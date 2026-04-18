@@ -157,7 +157,7 @@ export default function Navbar() {
                 ? 'bg-gradient-to-br from-neutral-700 to-neutral-900 dark:from-neutral-400 dark:to-neutral-300'
                 : 'bg-white/10 backdrop-blur-sm border border-white/20'
             }`}>
-              <Gem className={`size-5 transition-colors duration-500 ${scrolled ? 'text-gold-50' : 'text-white'}`} />
+              <Gem className={`size-5 transition-colors duration-500 ${scrolled ? 'text-silver-50' : 'text-white'}`} />
             </div>
             <span
               className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-500 ${
@@ -166,7 +166,7 @@ export default function Navbar() {
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
               Ruangan{' '}
-              <span className="text-gold-500 dark:text-gold-400">Elegan</span>
+              <span className="text-silver-500 dark:text-silver-400">Elegan</span>
             </span>
           </a>
 
@@ -183,8 +183,8 @@ export default function Navbar() {
                   className={`relative px-3.5 py-2 text-sm font-medium transition-colors rounded-md ${
                     isActive
                       ? scrolled
-                        ? 'text-gold-600 dark:text-gold-400'
-                        : 'text-gold-400'
+                        ? 'text-silver-600 dark:text-silver-400'
+                        : 'text-silver-400'
                       : scrolled
                         ? 'text-foreground/70 hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800'
                         : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -195,7 +195,7 @@ export default function Navbar() {
                     <motion.div
                       layoutId="activeNav"
                       className={`absolute bottom-0 left-3 right-3 h-0.5 rounded-full transition-colors duration-500 ${
-                        scrolled ? 'bg-gold-500 dark:bg-gold-400' : 'bg-gold-400'
+                        scrolled ? 'bg-silver-500 dark:bg-silver-400' : 'bg-silver-400'
                       }`}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
@@ -210,7 +210,7 @@ export default function Navbar() {
             <ThemeToggle scrolled={scrolled} />
             <Button
               asChild
-              className="bg-gold-500 hover:bg-gold-600 text-white dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-neutral-900 shadow-md shadow-gold-500/20 hover:shadow-gold-600/30 transition-all duration-200 font-semibold gap-2 px-5"
+              className="bg-silver-500 hover:bg-silver-600 text-white dark:bg-silver-500 dark:hover:bg-silver-400 dark:text-neutral-900 shadow-md shadow-silver-500/20 hover:shadow-silver-600/30 transition-all duration-200 font-semibold gap-2 px-5"
               size="default"
             >
               <a
@@ -232,7 +232,7 @@ export default function Navbar() {
               asChild
               className={`size-9 transition-all duration-500 ${
                 scrolled
-                  ? 'text-gold-500 hover:text-gold-600 hover:bg-gold-50 dark:hover:bg-gold-900/20'
+                  ? 'text-silver-500 hover:text-silver-600 hover:bg-silver-50 dark:hover:bg-silver-900/20'
                   : 'text-white/80 hover:text-white hover:bg-white/10'
               }`}
             >
@@ -261,14 +261,14 @@ export default function Navbar() {
                   <SheetTitle>
                     <div className="flex items-center gap-2.5">
                       <div className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-900 dark:from-neutral-400 dark:to-neutral-300">
-                        <Gem className="size-5 text-gold-50" />
+                        <Gem className="size-5 text-silver-50" />
                       </div>
                       <span
                         className="text-xl font-bold tracking-tight text-foreground"
                         style={{ fontFamily: 'var(--font-playfair)' }}
                       >
                         Ruangan{' '}
-                        <span className="text-gold-500 dark:text-gold-400">
+                        <span className="text-silver-500 dark:text-silver-400">
                           Elegan
                         </span>
                       </span>
@@ -293,7 +293,7 @@ export default function Navbar() {
                             onClick={(e) => scrollToSection(e, link.href)}
                             className={`flex items-center px-6 py-3 text-base font-medium transition-colors ${
                               isActive
-                                ? 'text-gold-500 dark:text-gold-400 bg-gold-50 dark:bg-gold-900/15 border-r-2 border-gold-500 dark:border-gold-400'
+                                ? 'text-silver-500 dark:text-silver-400 bg-silver-50 dark:bg-silver-900/15 border-r-2 border-silver-500 dark:border-silver-400'
                                 : 'text-foreground/70 hover:text-foreground hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50'
                             }`}
                           >
@@ -309,7 +309,7 @@ export default function Navbar() {
                   <SheetClose asChild>
                     <Button
                       asChild
-                      className="w-full bg-gold-500 hover:bg-gold-600 text-white dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-neutral-900 shadow-md shadow-gold-500/20 hover:shadow-gold-600/30 font-semibold gap-2 h-11"
+                      className="w-full bg-silver-500 hover:bg-silver-600 text-white dark:bg-silver-500 dark:hover:bg-silver-400 dark:text-neutral-900 shadow-md shadow-silver-500/20 hover:shadow-silver-600/30 font-semibold gap-2 h-11"
                       size="default"
                     >
                       <a

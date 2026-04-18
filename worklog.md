@@ -174,3 +174,44 @@ Stage Summary:
 - 5/5 sketch/blueprint images generated successfully
 - All images saved to /home/z/my-project/public/images/
 - Image sizes range from 141K to 217K
+
+---
+Task ID: 2-a
+Agent: General-Purpose Sub Agent
+Task: Replace gold with silver in navbar, hero, portfolio CSS class names (theme change gold/brown → silver/chrome)
+
+Work Log:
+- Read all 3 target files: navbar.tsx, hero.tsx, portfolio.tsx
+- Replaced all `gold-` with `silver-` in Tailwind CSS class names across all 3 files using replace_all
+- Fixed unintended replacement in portfolio.tsx: reverted image path `portfolio-gold-powder` back from `portfolio-silver-powder` (image file paths should not be changed)
+- Verified replacements with grep — no `gold-` CSS class names remain in the 3 target files
+- Other component files (about.tsx, services.tsx, contact.tsx, faq.tsx, process.tsx, testimonials.tsx, footer.tsx) were NOT in scope and still have `gold-` class names
+
+Changes per file:
+1. **navbar.tsx** — 18 replacements: text-gold-50/400/500/600 → silver, bg-gold-50/500/600/900 → silver, border-gold-500/400 → silver, shadow-gold-500/600 → silver, hover:bg-gold-50/600 → silver
+2. **hero.tsx** — 6 replacements: text-gold-400 → silver-400, bg-gold-500/600 → silver, shadow-gold-500 → silver
+3. **portfolio.tsx** — 24 replacements: bg-gold-50/500 → silver, text-gold-500/600/700/400/300 → silver, border-gold-200/300/400/700/800 → silver, shadow-gold-500 → silver, hover variants → silver, from-gold/via-gold/to-gold → silver
+
+Stage Summary:
+- Gold-to-silver theme change applied to navbar, hero, and portfolio components
+- All CSS class name references to gold color palette updated to silver
+- Image file paths preserved (not modified)
+- 48 total class-name replacements across 3 files
+
+---
+Task ID: 2-c
+Agent: General-Purpose Sub Agent
+Task: Replace gold with silver in process, testimonials, faq, footer
+
+Work Log:
+- Read all 4 component files to identify gold- class name occurrences
+- Replaced all `gold-` with `silver-` in process.tsx (10 replacements: bg-silver-200, bg-silver-800, border-silver-400 x4, bg-silver-500, shadow-silver-500/25, ring-silver-100, text-silver-500, text-silver-400)
+- Replaced all `gold-` with `silver-` in testimonials.tsx (25+ replacements: fill-silver-400, text-silver-400, bg-silver-50, from-silver-50, from-silver-950, border-silver-400/30, bg-silver-500/10, text-silver-600, text-silver-400, fill-silver-50, text-silver-500, border-silver-100, border-silver-900, bg-silver-50, bg-silver-900, text-silver-600, text-silver-300, border-silver-200, bg-silver-50, bg-silver-900, text-silver-400, bg-silver-500, bg-silver-400, bg-silver-200, bg-silver-300, bg-silver-800, bg-silver-700)
+- Replaced all `gold-` with `silver-` in faq.tsx (12+ replacements: bg-silver-50, bg-silver-900/20, text-silver-600, text-silver-400, bg-silver-500, bg-silver-400, bg-silver-50/60, bg-silver-950/20, border-silver-200/50, border-silver-800/30, text-silver-600, text-silver-400, text-silver-500, bg-silver-500, shadow-silver-500/20, hover:bg-silver-600, shadow-silver-600/30, ring-silver-500)
+- Replaced all `gold-` with `silver-` in footer.tsx (6 replacements: hover:bg-silver-500 x3, hover:text-silver-400 x2, text-silver-500 x3)
+- Verified zero remaining `gold-` occurrences in all 4 files via grep
+
+Stage Summary:
+- All gold- CSS class names replaced with silver- across 4 component files
+- Theme changed from gold/brown to silver/chrome in process, testimonials, faq, and footer sections
+- No non-CSS text was modified

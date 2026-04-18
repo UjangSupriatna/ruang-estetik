@@ -67,7 +67,7 @@ export default function Hero() {
           >
             Wujudkan
             <br />
-            <span className="text-gold-400">Ruangan Impian</span>
+            <span className="text-silver-400">Ruangan Impian</span>
             <br />
             Anda
           </motion.h1>
@@ -88,7 +88,7 @@ export default function Hero() {
             <Button
               size="lg"
               asChild
-              className="h-13 rounded-full bg-gold-500 px-8 text-base font-semibold text-white shadow-lg shadow-gold-500/25 transition-all hover:bg-gold-600 hover:shadow-xl hover:shadow-gold-500/30"
+              className="h-13 rounded-full bg-silver-500 px-8 text-base font-semibold text-white shadow-lg shadow-silver-500/25 transition-all hover:bg-silver-600 hover:shadow-xl hover:shadow-silver-500/30"
             >
               <a href="#kontak">
                 <Phone className="mr-2 size-4" />
@@ -121,7 +121,7 @@ export default function Hero() {
                   <div className="hidden sm:block h-12 w-px bg-white/20" />
                 )}
                 <div>
-                  <p className="text-2xl font-bold text-gold-400 sm:text-3xl md:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <p className="text-2xl font-bold text-silver-400 sm:text-3xl md:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
                     {stat.value}
                   </p>
                   <p className="mt-0.5 text-xs text-white/50 sm:text-sm md:text-base">

@@ -58,7 +58,7 @@ function StatCard({ stat, index, inView }: { stat: StatItem; index: number; inVi
       }}
       className="flex flex-col items-center rounded-xl border border-border/50 bg-card p-4 text-center shadow-sm transition-shadow hover:shadow-md sm:p-5"
     >
-      <span className="font-[var(--font-playfair)] text-3xl font-bold text-gold-500 dark:text-gold-400 sm:text-4xl">
+      <span className="font-[var(--font-playfair)] text-3xl font-bold text-silver-500 dark:text-silver-400 sm:text-4xl">
         {count}
         {stat.suffix}
       </span>
@@ -127,8 +127,8 @@ export default function About() {
     >
       {/* Subtle background decoration */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-gold-50 dark:bg-gold-900/20" />
-        <div className="absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-gold-50 dark:bg-gold-900/20" />
+        <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-silver-50 dark:bg-silver-900/20" />
+        <div className="absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-silver-50 dark:bg-silver-900/20" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -141,7 +141,7 @@ export default function About() {
             className="relative order-2 lg:order-1"
           >
             {/* Decorative frame behind image */}
-            <div className="absolute -bottom-4 -right-4 z-0 hidden h-full w-full rounded-2xl border-2 border-gold-300 dark:border-gold-700 lg:block" />
+            <div className="absolute -bottom-4 -right-4 z-0 hidden h-full w-full rounded-2xl border-2 border-silver-300 dark:border-silver-700 lg:block" />
 
             <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl shadow-black/10">
               <Image
@@ -167,8 +167,8 @@ export default function About() {
           >
             {/* Label */}
             <motion.div variants={itemVariants}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-gold-300 bg-gold-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-gold-600 dark:border-gold-700 dark:bg-gold-900/20 dark:text-gold-400 sm:text-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-silver-300 bg-silver-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-silver-600 dark:border-silver-700 dark:bg-silver-900/20 dark:text-silver-400 sm:text-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-silver-500" />
                 Tentang Kami
               </span>
             </motion.div>
@@ -179,7 +179,7 @@ export default function About() {
               className="mt-5 font-[var(--font-playfair)] text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.2]"
             >
               Mengubah Ruangan Menjadi{' '}
-              <span className="text-gold-500 dark:text-gold-400">Karya Seni</span>
+              <span className="text-silver-500 dark:text-silver-400">Karya Seni</span>
             </motion.h2>
 
             {/* Paragraph 1 */}

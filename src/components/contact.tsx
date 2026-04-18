@@ -159,7 +159,7 @@ Terima kasih!`;
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-600 dark:text-gold-400">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-silver-400/30 bg-silver-500/10 px-4 py-1.5 text-sm font-medium text-silver-600 dark:text-silver-400">
             <MessageCircle className="size-3.5" />
             Hubungi Kami
           </span>
@@ -184,17 +184,17 @@ Terima kasih!`;
               {contactInfo.map((item) => (
                 <Card
                   key={item.title}
-                  className="border-gold-100/60 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:shadow-md dark:border-gold-900/30 dark:bg-card/60"
+                  className="border-silver-100/60 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:shadow-md dark:border-silver-900/30 dark:bg-card/60"
                 >
                   <CardContent className="flex items-start gap-4 pt-5">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-gold-500 dark:bg-neutral-800 dark:text-gold-400">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-silver-500 dark:bg-neutral-800 dark:text-silver-400">
                       <item.icon className="size-5" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">
                         {item.title}
                       </p>
-                      <p className="text-sm font-medium text-gold-600 dark:text-gold-400">
+                      <p className="text-sm font-medium text-silver-600 dark:text-silver-400">
                         {item.detail}
                       </p>
                       <p className="text-xs text-muted-foreground">
@@ -215,7 +215,7 @@ Terima kasih!`;
                 Dapatkan respon cepat langsung dari kami
               </p>
               <Button
-                className="mt-4 w-full bg-gold-500 text-neutral-900 hover:bg-gold-400 dark:bg-gold-500 dark:text-neutral-900 dark:hover:bg-gold-400 font-semibold"
+                className="mt-4 w-full bg-silver-500 text-neutral-900 hover:bg-silver-400 dark:bg-silver-500 dark:text-neutral-900 dark:hover:bg-silver-400 font-semibold"
                 asChild
               >
                 <a
@@ -238,7 +238,7 @@ Terima kasih!`;
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
-            <Card className="border-gold-100/60 bg-white/80 backdrop-blur-sm dark:border-gold-900/30 dark:bg-card/80">
+            <Card className="border-silver-100/60 bg-white/80 backdrop-blur-sm dark:border-silver-900/30 dark:bg-card/80">
               <CardContent className="p-6 sm:p-8">
                 {isSubmitted ? (
                   <motion.div
@@ -247,7 +247,7 @@ Terima kasih!`;
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <CheckCircle2 className="size-16 text-gold-500" />
+                    <CheckCircle2 className="size-16 text-silver-500" />
                     <h3 className="mt-4 font-[var(--font-playfair)] text-2xl font-bold text-foreground">
                       Terima Kasih!
                     </h3>
@@ -267,7 +267,7 @@ Terima kasih!`;
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
+                          className="border-neutral-200/60 focus:border-silver-400 focus:ring-silver-400 dark:border-neutral-700/40"
                         />
                       </div>
                       <div className="space-y-2">
@@ -279,7 +279,7 @@ Terima kasih!`;
                           placeholder="nama@email.com"
                           value={formData.email}
                           onChange={handleChange}
-                          className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
+                          className="border-neutral-200/60 focus:border-silver-400 focus:ring-silver-400 dark:border-neutral-700/40"
                         />
                       </div>
                     </div>
@@ -294,7 +294,7 @@ Terima kasih!`;
                           placeholder="+62 838-xxxx-xxxx"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
+                          className="border-neutral-200/60 focus:border-silver-400 focus:ring-silver-400 dark:border-neutral-700/40"
                         />
                       </div>
                       <div className="space-y-2">
@@ -308,7 +308,7 @@ Terima kasih!`;
                             }))
                           }
                         >
-                          <SelectTrigger className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40">
+                          <SelectTrigger className="border-neutral-200/60 focus:border-silver-400 focus:ring-silver-400 dark:border-neutral-700/40">
                             <SelectValue placeholder="Pilih layanan" />
                           </SelectTrigger>
                           <SelectContent>
@@ -337,7 +337,7 @@ Terima kasih!`;
                           setFormData((prev) => ({ ...prev, budget: value }))
                         }
                       >
-                        <SelectTrigger className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40">
+                        <SelectTrigger className="border-neutral-200/60 focus:border-silver-400 focus:ring-silver-400 dark:border-neutral-700/40">
                           <SelectValue placeholder="Pilih range anggaran" />
                         </SelectTrigger>
                         <SelectContent>
@@ -370,7 +370,7 @@ Terima kasih!`;
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="border-neutral-200/60 focus:border-gold-400 focus:ring-gold-400 dark:border-neutral-700/40"
+                        className="border-neutral-200/60 focus:border-silver-400 focus:ring-silver-400 dark:border-neutral-700/40"
                       />
                     </div>
 
@@ -378,7 +378,7 @@ Terima kasih!`;
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-gold-500 text-neutral-900 hover:bg-gold-600 dark:bg-gold-500 dark:text-neutral-900 dark:hover:bg-gold-400 font-semibold"
+                      className="w-full bg-silver-500 text-neutral-900 hover:bg-silver-600 dark:bg-silver-500 dark:text-neutral-900 dark:hover:bg-silver-400 font-semibold"
                     >
                       {isSubmitting ? (
                         <>

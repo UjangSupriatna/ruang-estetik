@@ -58,7 +58,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex size-10 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-colors hover:bg-gold-500 hover:text-neutral-900"
+                className="flex size-10 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-colors hover:bg-silver-500 hover:text-neutral-900"
               >
                 <Instagram className="size-4" />
               </a>
@@ -67,7 +67,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex size-10 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-colors hover:bg-gold-500 hover:text-neutral-900"
+                className="flex size-10 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-colors hover:bg-silver-500 hover:text-neutral-900"
               >
                 <Facebook className="size-4" />
               </a>
@@ -76,7 +76,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex size-10 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-colors hover:bg-gold-500 hover:text-neutral-900"
+                className="flex size-10 items-center justify-center rounded-lg bg-neutral-800 text-neutral-400 transition-colors hover:bg-silver-500 hover:text-neutral-900"
               >
                 <Youtube className="size-4" />
               </a>
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-400 transition-colors hover:text-gold-400"
+                    className="text-sm text-neutral-400 transition-colors hover:text-silver-400"
                   >
                     {link.label}
                   </Link>
@@ -123,19 +123,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-gold-500" />
+                <MapPin className="mt-0.5 size-4 shrink-0 text-silver-500" />
                 <span className="text-sm text-neutral-400">
                   Bandung, Jawa Barat, Indonesia
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="size-4 shrink-0 text-gold-500" />
+                <Phone className="size-4 shrink-0 text-silver-500" />
                 <span className="text-sm text-neutral-400">
                   +62 838-6229-5779
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="size-4 shrink-0 text-gold-500" />
+                <Mail className="size-4 shrink-0 text-silver-500" />
                 <span className="text-sm text-neutral-400">
                   derrycp37@gmail.com
                 </span>
@@ -155,13 +155,13 @@ export default function Footer() {
         <div className="flex gap-6">
           <Link
             href="#"
-            className="text-xs text-neutral-500 transition-colors hover:text-gold-400"
+            className="text-xs text-neutral-500 transition-colors hover:text-silver-400"
           >
             Kebijakan Privasi
           </Link>
           <Link
             href="#"
-            className="text-xs text-neutral-500 transition-colors hover:text-gold-400"
+            className="text-xs text-neutral-500 transition-colors hover:text-silver-400"
           >
             Syarat & Ketentuan
           </Link>
@@ -170,7 +170,7 @@ export default function Footer() {
           variant="ghost"
           size="icon"
           onClick={scrollToTop}
-          className="text-neutral-400 hover:bg-neutral-800 hover:text-gold-400"
+          className="text-neutral-400 hover:bg-neutral-800 hover:text-silver-400"
           aria-label="Scroll to top"
         >
           <ArrowUp className="size-4" />

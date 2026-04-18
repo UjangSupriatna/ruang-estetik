@@ -386,8 +386,8 @@ const portfolioItems: PortfolioItem[] = [
 const ITEMS_PER_PAGE = 6
 
 const categoryBadgeStyles: Record<Category, string> = {
-  'Semua': 'bg-gold-50 text-gold-700 border-gold-200 hover:bg-gold-50',
-  'Rumah Tinggal': 'bg-gold-50 text-gold-700 border-gold-200 hover:bg-gold-50',
+  'Semua': 'bg-silver-50 text-silver-700 border-silver-200 hover:bg-silver-50',
+  'Rumah Tinggal': 'bg-silver-50 text-silver-700 border-silver-200 hover:bg-silver-50',
   'Komersial': 'bg-neutral-100 text-neutral-700 border-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:border-neutral-700',
   'Renovasi': 'bg-neutral-50 text-neutral-600 border-neutral-200 dark:bg-neutral-800/50 dark:text-neutral-400 dark:border-neutral-700',
 }
@@ -448,7 +448,7 @@ function PortfolioCard({
               }}
               className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium backdrop-blur-sm transition-colors ${
                 showSketch
-                  ? 'bg-gold-500 text-white'
+                  ? 'bg-silver-500 text-white'
                   : 'bg-white/20 text-white hover:bg-white/30'
               }`}
             >
@@ -494,7 +494,7 @@ function PortfolioCard({
             <Button
               variant="ghost"
               size="icon"
-              className="size-8 shrink-0 text-muted-foreground hover:text-gold-500"
+              className="size-8 shrink-0 text-muted-foreground hover:text-silver-500"
               onClick={() => onOpenDetail(item)}
             >
               <Maximize2 className="size-4" />
@@ -620,7 +620,7 @@ function PortfolioDetail({
                 {/* Result */}
                 <div className="relative rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
                   <div className="absolute top-3 left-3 z-10">
-                    <span className="flex items-center gap-1.5 rounded-full bg-gold-500/90 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+                    <span className="flex items-center gap-1.5 rounded-full bg-silver-500/90 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
                       <Sparkles className="size-3" />
                       HASIL JADI
                     </span>
@@ -675,7 +675,7 @@ function PortfolioDetail({
                 className="relative rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700"
               >
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="flex items-center gap-2 rounded-full bg-gold-500/90 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+                  <span className="flex items-center gap-2 rounded-full bg-silver-500/90 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
                     <Sparkles className="size-4" />
                     HASIL JADI
                   </span>
@@ -696,7 +696,7 @@ function PortfolioDetail({
           {/* Arrow indicator between images in compare mode */}
           {viewMode === 'compare' && (
             <div className="hidden md:flex justify-center -mt-6 relative z-10">
-              <div className="flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-gold-500/25">
+              <div className="flex items-center gap-2 rounded-full bg-silver-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-silver-500/25">
                 <PencilRuler className="size-4" />
                 <ArrowRight className="size-4" />
                 <Sparkles className="size-4" />
@@ -711,7 +711,7 @@ function PortfolioDetail({
                 key={detail.label}
                 className="rounded-xl bg-neutral-50 dark:bg-neutral-800/50 p-3 text-center border border-neutral-100 dark:border-neutral-700/50"
               >
-                <detail.icon className="size-4 text-gold-500 mx-auto mb-1.5" />
+                <detail.icon className="size-4 text-silver-500 mx-auto mb-1.5" />
                 <p className="text-xs text-muted-foreground">{detail.label}</p>
                 <p className="text-sm font-semibold text-foreground mt-0.5">{detail.value}</p>
               </div>
@@ -721,7 +721,7 @@ function PortfolioDetail({
           {/* Description */}
           <div className="rounded-xl bg-neutral-50 dark:bg-neutral-800/50 p-5 border border-neutral-100 dark:border-neutral-700/50">
             <h3 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-              <Eye className="size-4 text-gold-500" />
+              <Eye className="size-4 text-silver-500" />
               Deskripsi Proyek
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -733,7 +733,7 @@ function PortfolioDetail({
           <div className="text-center pt-2">
             <Button
               asChild
-              className="bg-gold-500 hover:bg-gold-600 text-neutral-900 font-semibold gap-2 px-8"
+              className="bg-silver-500 hover:bg-silver-600 text-neutral-900 font-semibold gap-2 px-8"
             >
               <a href="#kontak">
                 <ArrowRight className="size-4" />
@@ -805,7 +805,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-block text-gold-500 dark:text-gold-400 font-medium text-sm tracking-wider uppercase mb-3"
+            className="inline-block text-silver-500 dark:text-silver-400 font-medium text-sm tracking-wider uppercase mb-3"
           >
             Portfolio
           </motion.span>
@@ -834,7 +834,7 @@ export default function Portfolio() {
               className={`rounded-full px-5 transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground shadow-md hover:bg-primary/90 hover:shadow-lg'
-                  : 'hover:bg-gold-50 hover:text-gold-600 hover:border-gold-300 dark:hover:bg-gold-950/30 dark:hover:text-gold-400 dark:hover:border-gold-800'
+                  : 'hover:bg-silver-50 hover:text-silver-600 hover:border-silver-300 dark:hover:bg-silver-950/30 dark:hover:text-silver-400 dark:hover:border-silver-800'
               }`}
             >
               {category}
@@ -884,7 +884,7 @@ export default function Portfolio() {
               variant="outline"
               size="lg"
               onClick={handleLoadMore}
-              className="rounded-full px-8 gap-2 border-gold-300 text-gold-600 hover:bg-gold-50 hover:text-gold-700 hover:border-gold-400 dark:border-gold-700 dark:text-gold-400 dark:hover:bg-gold-950/30 dark:hover:text-gold-300 dark:hover:border-gold-600 transition-all duration-300"
+              className="rounded-full px-8 gap-2 border-silver-300 text-silver-600 hover:bg-silver-50 hover:text-silver-700 hover:border-silver-400 dark:border-silver-700 dark:text-silver-400 dark:hover:bg-silver-950/30 dark:hover:text-silver-300 dark:hover:border-silver-600 transition-all duration-300"
             >
               <ChevronDown className="size-4" />
               Lihat Lebih Banyak
@@ -906,7 +906,7 @@ export default function Portfolio() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-14 md:mt-20 flex justify-center"
         >
-          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600" />
+          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-silver-400 via-silver-500 to-silver-600" />
         </motion.div>
       </div>
 
