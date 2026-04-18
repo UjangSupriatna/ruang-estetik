@@ -2,9 +2,18 @@
 
 import { useState, useRef, useEffect, useSyncExternalStore, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Phone, Send, Bot, User } from 'lucide-react'
+import { X, Send, Bot, User } from 'lucide-react'
 
 const WHATSAPP_NUMBER = '6283862295779'
+
+/* ─── WhatsApp SVG Icon ─── */
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.132 6.742 3.054 9.378L1.054 31.29l6.118-1.962C9.72 30.876 12.764 31.87 16.004 31.87 24.826 31.87 32 24.696 32 16.004 32 7.312 24.826 0 16.004 0zm9.302 22.61c-.39 1.1-1.932 2.014-3.168 2.28-.844.18-1.948.324-5.664-1.218-4.756-1.972-7.816-6.788-8.052-7.104-.228-.316-1.858-2.476-1.858-4.724s1.18-3.356 1.6-4.06c.42-.704.916-.88 1.224-.88.308 0 .616.004.884.016.284.012.664-.108 1.038.792.39.932 1.328 3.244 1.444 3.478.116.234.194.508.04.82-.156.316-.234.508-.468.784-.234.274-.492.614-.704.82-.234.236-.478.49-.204.962.272.47 1.212 1.996 2.602 3.234 1.788 1.594 3.296 2.088 3.772 2.322.47.234.748.196 1.022-.118.28-.316 1.186-1.382 1.504-1.858.316-.47.636-.39 1.07-.234.436.156 2.752 1.298 3.222 1.534.47.234.784.352.9.546.118.194.118 1.12-.272 2.218z" />
+    </svg>
+  )
+}
 
 /* ─── Types ─── */
 interface Message {
@@ -437,7 +446,7 @@ export default function ChatWidget() {
                 className="group flex size-12 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-[#25D366]/20 transition-all duration-200 hover:bg-[#20bd5a] hover:shadow-xl hover:shadow-[#25D366]/30 hover:scale-110"
                 title="WhatsApp"
               >
-                <Phone className="size-5 text-white" />
+                <WhatsAppIcon className="size-5 text-white" />
               </a>
             </motion.div>
           </motion.div>
@@ -481,7 +490,7 @@ export default function ChatWidget() {
               exit={{ rotate: -90, opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="size-6 text-white" />
+              <Bot className="size-6 text-white" />
             </motion.div>
           )}
         </AnimatePresence>
