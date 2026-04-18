@@ -21,6 +21,7 @@ import {
   Maximize2,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
 } from 'lucide-react'
 
 const categories = ['Semua', 'Rumah Tinggal', 'Komersial', 'Renovasi'] as const
@@ -119,7 +120,270 @@ const portfolioItems: PortfolioItem[] = [
     duration: '8 Minggu',
     style: 'Tropical Modern',
   },
+  // ===== 20 New Interior Design Portfolio Items =====
+  {
+    id: 7,
+    sketchImage: '/images/portfolio-japandi-living-sketch.png',
+    resultImage: '/images/portfolio-japandi-living.png',
+    title: 'Ruang Tamu Japandi',
+    category: 'Rumah Tinggal',
+    description: 'Perpaduan filosofi Jepang dan Skandinavia, menghadirkan ketenangan melalui garis bersih, material alami, dan ruang negatif yang artistik.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '85 m²',
+    duration: '3 Minggu',
+    style: 'Japandi',
+  },
+  {
+    id: 8,
+    sketchImage: '/images/portfolio-artdeco-bedroom-sketch.png',
+    resultImage: '/images/portfolio-artdeco-bedroom.png',
+    title: 'Kamar Tidur Art Deco',
+    category: 'Rumah Tinggal',
+    description: 'Kemewahan era 1920-an dengan pola geometris, aksen emas, beludru, dan furnitur cermin yang dramatis.',
+    location: 'Jakarta Pusat',
+    year: '2024',
+    area: '55 m²',
+    duration: '4 Minggu',
+    style: 'Art Deco Luxury',
+  },
+  {
+    id: 9,
+    sketchImage: '/images/portfolio-industrial-kitchen-sketch.png',
+    resultImage: '/images/portfolio-industrial-kitchen.png',
+    title: 'Dapur Industrial Modern',
+    category: 'Rumah Tinggal',
+    description: 'Dapur bergaya loft dengan dinding bata ekspos, baja tahan karat, beton, dan pencahayaan pendant industrial.',
+    location: 'Bandung, Jawa Barat',
+    year: '2023',
+    area: '50 m²',
+    duration: '5 Minggu',
+    style: 'Industrial Modern',
+  },
+  {
+    id: 10,
+    sketchImage: '/images/portfolio-marble-bathroom-sketch.png',
+    resultImage: '/images/portfolio-marble-bathroom.png',
+    title: 'Kamar Mandi Marmer Mewah',
+    category: 'Renovasi',
+    description: 'Transformasi total kamar mandi dengan marmer premium, bathtub freestanding, fixture emas, dan pencahayaan ambient.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '30 m²',
+    duration: '3 Minggu',
+    style: 'Marble Luxury',
+  },
+  {
+    id: 11,
+    sketchImage: '/images/portfolio-minimalist-office-sketch.png',
+    resultImage: '/images/portfolio-minimalist-office.png',
+    title: 'Home Office Minimalis',
+    category: 'Rumah Tinggal',
+    description: 'Ruang kerja rumahan yang bersih dan fungsional dengan meja built-in, rak dinding, tanaman hias, dan pencahayaan alami.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '20 m²',
+    duration: '2 Minggu',
+    style: 'Minimalist Clean',
+  },
+  {
+    id: 12,
+    sketchImage: '/images/portfolio-classic-dining-sketch.png',
+    resultImage: '/images/portfolio-classic-dining.png',
+    title: 'Ruang Makan Klasik Kontemporer',
+    category: 'Rumah Tinggal',
+    description: 'Elegansi klasik bertemu modern, lengkap dengan kristal chandelier, meja kayu gelap, kursi berlapis, dan dinding wainscoting.',
+    location: 'Surabaya, Jawa Timur',
+    year: '2023',
+    area: '40 m²',
+    duration: '3 Minggu',
+    style: 'Classic Contemporary',
+  },
+  {
+    id: 13,
+    sketchImage: '/images/portfolio-scandi-kids-sketch.png',
+    resultImage: '/images/portfolio-scandi-kids.png',
+    title: 'Kamar Anak Scandinavian',
+    category: 'Rumah Tinggal',
+    description: 'Kamar anak yang ceria dan aman dengan warna pastel, bunk bed fungsional, karpet lembut, dan dekorasi awan yang imut.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '25 m²',
+    duration: '2 Minggu',
+    style: 'Scandinavian Playful',
+  },
+  {
+    id: 14,
+    sketchImage: '/images/portfolio-walkin-closet-sketch.png',
+    resultImage: '/images/portfolio-walkin-closet.png',
+    title: 'Walk-in Closet Glamour',
+    category: 'Rumah Tinggal',
+    description: 'Closet layak butik mewah dengan LED lighting, kaca display, laci berlapis beludru, island perhiasan, dan cermin penuh.',
+    location: 'Jakarta Selatan',
+    year: '2024',
+    area: '18 m²',
+    duration: '2 Minggu',
+    style: 'Glamour Boutique',
+  },
+  {
+    id: 15,
+    sketchImage: '/images/portfolio-tropical-living-sketch.png',
+    resultImage: '/images/portfolio-tropical-living.png',
+    title: 'Ruang Tamu Tropis Modern',
+    category: 'Rumah Tinggal',
+    description: 'Interior tropis yang segar dengan tanaman indoor, furnitur rotan, aksen bambu, dinding batu alam, dan konsep terbuka.',
+    location: 'Lembang, Bandung',
+    year: '2023',
+    area: '100 m²',
+    duration: '4 Minggu',
+    style: 'Tropical Modern',
+  },
+  {
+    id: 16,
+    sketchImage: '/images/portfolio-studio-apartment-sketch.png',
+    resultImage: '/images/portfolio-studio-apartment.png',
+    title: 'Studio Apartemen Smart',
+    category: 'Komersial',
+    description: 'Apartemen studio ultra-kompak dengan Murphy bed, meja lipat, storage tersembunyi, dan furnitur multi-fungsi terintegrasi.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '32 m²',
+    duration: '3 Minggu',
+    style: 'Smart Compact',
+  },
+  {
+    id: 17,
+    sketchImage: '/images/portfolio-home-library-sketch.png',
+    resultImage: '/images/portfolio-home-library.png',
+    title: 'Perpustakaan Vintage Luxe',
+    category: 'Rumah Tinggal',
+    description: 'Ruang baca pribadi dengan rak buku langit-langit, kursi kulit, lampu baca, karpet Persia, dan paneling kayu gelap.',
+    location: 'Bandung, Jawa Barat',
+    year: '2023',
+    area: '45 m²',
+    duration: '4 Minggu',
+    style: 'Vintage Luxe',
+  },
+  {
+    id: 18,
+    sketchImage: '/images/portfolio-gold-powder-sketch.png',
+    resultImage: '/images/portfolio-gold-powder.png',
+    title: 'Powder Room Aksen Emas',
+    category: 'Renovasi',
+    description: 'Ruang tamu kecil berstatement dengan wallpaper hitam-emas, cermin ornate, vanity marmer, dan fixture kuningan berkilau.',
+    location: 'Jakarta Selatan',
+    year: '2024',
+    area: '8 m²',
+    duration: '1 Minggu',
+    style: 'Gold Accent Luxury',
+  },
+  {
+    id: 19,
+    sketchImage: '/images/portfolio-biophilic-garden-sketch.png',
+    resultImage: '/images/portfolio-biophilic-garden.png',
+    title: 'Ruang Taman Biophilic',
+    category: 'Rumah Tinggal',
+    description: 'Ruang hijau dalam rumah dengan living wall, tanaman gantung, furnitur kayu alami, skylight, dan lantai batu alam.',
+    location: 'Lembang, Bandung',
+    year: '2024',
+    area: '60 m²',
+    duration: '5 Minggu',
+    style: 'Biophilic Design',
+  },
+  {
+    id: 20,
+    sketchImage: '/images/portfolio-hotel-bedroom-sketch.png',
+    resultImage: '/images/portfolio-hotel-bedroom.png',
+    title: 'Kamar Tidur Hotel Luxury',
+    category: 'Komersial',
+    description: 'Kamar tidur standar bintang lima dengan headboard tufted, sprei sutra, area duduk, mini bar, dan pencahayaan ambient.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '50 m²',
+    duration: '3 Minggu',
+    style: 'Hotel Luxury',
+  },
+  {
+    id: 21,
+    sketchImage: '/images/portfolio-wabisabi-kitchen-sketch.png',
+    resultImage: '/images/portfolio-wabisabi-kitchen.png',
+    title: 'Dapur Wabi-Sabi',
+    category: 'Rumah Tinggal',
+    description: 'Keindahan ketidaksempurnaan dengan tekstur organik, keramik handmade, kayu alami, balok ekspos, dan bentuk asimetris.',
+    location: 'Bandung, Jawa Barat',
+    year: '2023',
+    area: '35 m²',
+    duration: '4 Minggu',
+    style: 'Wabi-Sabi',
+  },
+  {
+    id: 22,
+    sketchImage: '/images/portfolio-entertainment-sketch.png',
+    resultImage: '/images/portfolio-entertainment.png',
+    title: 'Ruang Entertainment Modern',
+    category: 'Rumah Tinggal',
+    description: 'Ruang hiburan premium dengan layar proyektor besar, surround sound, kursi berjenjang, panel akustik, dan smart home integration.',
+    location: 'Jakarta Barat',
+    year: '2024',
+    area: '55 m²',
+    duration: '5 Minggu',
+    style: 'Modern Tech',
+  },
+  {
+    id: 23,
+    sketchImage: '/images/portfolio-prayer-room-sketch.png',
+    resultImage: '/images/portfolio-prayer-room.png',
+    title: 'Ruang Sholat Minimalis Tenang',
+    category: 'Rumah Tinggal',
+    description: 'Ruang ibadah pribadi dengan nuansa netral, sajadah, seni geometri Islam, pencahayaan alami lembut, dan rak buku agama.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '12 m²',
+    duration: '1 Minggu',
+    style: 'Serene Minimal',
+  },
+  {
+    id: 24,
+    sketchImage: '/images/portfolio-laundry-room-sketch.png',
+    resultImage: '/images/portfolio-laundry-room.png',
+    title: 'Ruang Laundry Fungsional',
+    category: 'Renovasi',
+    description: 'Laundry room terorganisir dengan kabinet built-in, countertop kuarsa, washer-dryer front-load, dan backsplash subway tile.',
+    location: 'Bandung, Jawa Barat',
+    year: '2023',
+    area: '15 m²',
+    duration: '2 Minggu',
+    style: 'Functional Modern',
+  },
+  {
+    id: 25,
+    sketchImage: '/images/portfolio-balcony-retreat-sketch.png',
+    resultImage: '/images/portfolio-balcony-retreat.png',
+    title: 'Balkon Urban Retreat',
+    category: 'Renovasi',
+    description: 'Transformasi balkon menjadi oasis perkotaan dengan furnitur outdoor, lampu string, pot tanaman, decking kayu, dan privacy screen.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '18 m²',
+    duration: '2 Minggu',
+    style: 'Urban Retreat',
+  },
+  {
+    id: 26,
+    sketchImage: '/images/portfolio-walkin-pantry-sketch.png',
+    resultImage: '/images/portfolio-walkin-pantry.png',
+    title: 'Walk-in Pantry Terorganisir',
+    category: 'Rumah Tinggal',
+    description: 'Pantry mewah dengan custom shelving, laci pull-out, spice rack, wine storage, countertop marmer, dan jar organizasi.',
+    location: 'Bandung, Jawa Barat',
+    year: '2024',
+    area: '14 m²',
+    duration: '2 Minggu',
+    style: 'Organized Luxury',
+  },
 ]
+
+const ITEMS_PER_PAGE = 6
 
 const categoryBadgeStyles: Record<Category, string> = {
   'Semua': 'bg-gold-50 text-gold-700 border-gold-200 hover:bg-gold-50',
@@ -488,11 +752,24 @@ export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<Category>('Semua')
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null)
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
 
   const filteredItems =
     activeCategory === 'Semua'
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === activeCategory)
+
+  const displayedItems = filteredItems.slice(0, visibleCount)
+  const hasMore = visibleCount < filteredItems.length
+
+  const handleCategoryChange = useCallback((category: Category) => {
+    setActiveCategory(category)
+    setVisibleCount(ITEMS_PER_PAGE)
+  }, [])
+
+  const handleLoadMore = useCallback(() => {
+    setVisibleCount((prev) => prev + ITEMS_PER_PAGE)
+  }, [])
 
   const handleOpenDetail = useCallback((item: PortfolioItem) => {
     setSelectedItem(item)
@@ -553,7 +830,7 @@ export default function Portfolio() {
               key={category}
               variant={activeCategory === category ? 'default' : 'outline'}
               size="sm"
-              onClick={() => setActiveCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               className={`rounded-full px-5 transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground shadow-md hover:bg-primary/90 hover:shadow-lg'
@@ -572,7 +849,7 @@ export default function Portfolio() {
               layout
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
             >
-              {filteredItems.map((item, index) => (
+              {displayedItems.map((item, index) => (
                 <PortfolioCard
                   key={item.id}
                   item={item}
@@ -594,6 +871,32 @@ export default function Portfolio() {
             </motion.div>
           )}
         </div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="mt-10 md:mt-14 flex flex-col items-center gap-3"
+          >
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={handleLoadMore}
+              className="rounded-full px-8 gap-2 border-gold-300 text-gold-600 hover:bg-gold-50 hover:text-gold-700 hover:border-gold-400 dark:border-gold-700 dark:text-gold-400 dark:hover:bg-gold-950/30 dark:hover:text-gold-300 dark:hover:border-gold-600 transition-all duration-300"
+            >
+              <ChevronDown className="size-4" />
+              Lihat Lebih Banyak
+              <span className="text-xs text-muted-foreground ml-1">
+                ({filteredItems.length - visibleCount} lagi)
+              </span>
+            </Button>
+            <p className="text-xs text-muted-foreground">
+              Menampilkan {displayedItems.length} dari {filteredItems.length} proyek
+            </p>
+          </motion.div>
+        )}
 
         {/* Bottom decorative accent */}
         <motion.div
