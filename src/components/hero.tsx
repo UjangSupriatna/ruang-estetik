@@ -63,7 +63,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-300 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-400 animate-pulse" />
-              Interior Design & Building
+              Jasa Desain & Bangunan
             </span>
           </motion.div>
 
