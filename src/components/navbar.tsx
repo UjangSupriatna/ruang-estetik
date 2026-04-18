@@ -224,7 +224,22 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-1.5">
+          <div className="flex lg:hidden items-center gap-1">
+            {/* Mobile Phone CTA */}
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className={`size-9 transition-all duration-500 ${
+                scrolled
+                  ? 'text-gold-500 hover:text-gold-600 hover:bg-gold-50 dark:hover:bg-gold-900/20'
+                  : 'text-white/80 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              <a href="https://wa.me/6283862295779" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <Phone className="size-4" />
+              </a>
+            </Button>
             <ThemeToggle scrolled={scrolled} />
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>

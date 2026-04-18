@@ -112,19 +112,19 @@ export default function Hero() {
         {/* Stats Bar */}
         <motion.div
           variants={itemVariants}
-          className="mt-auto pb-8 pt-20 sm:pb-12"
+          className="mt-auto pb-8 pt-16 sm:pt-20 sm:pb-12"
         >
-          <div className="flex flex-col gap-6 sm:flex-row sm:gap-10 md:gap-16">
+          <div className="flex flex-row gap-4 sm:gap-10 md:gap-16 flex-wrap">
             {stats.map((stat, index) => (
-              <div key={stat.label} className="flex items-center gap-4">
+              <div key={stat.label} className="flex items-center gap-3 sm:gap-4">
                 {index > 0 && (
                   <div className="hidden sm:block h-12 w-px bg-white/20" />
                 )}
                 <div>
-                  <p className="text-3xl font-bold text-gold-400 sm:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <p className="text-2xl font-bold text-gold-400 sm:text-3xl md:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-sm text-white/50 sm:text-base">
+                  <p className="mt-0.5 text-xs text-white/50 sm:text-sm md:text-base">
                     {stat.label}
                   </p>
                 </div>
