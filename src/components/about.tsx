@@ -145,8 +145,8 @@ export default function About() {
 
             <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl shadow-black/10">
               <Image
-                src="/images/about-team.png"
-                alt="Tim profesional Ruang Estetik"
+                src="/images/about-interior.png"
+                alt="Hasil desain interior premium oleh Ruang Estetik"
                 width={640}
                 height={480}
                 className="h-auto w-full object-cover"

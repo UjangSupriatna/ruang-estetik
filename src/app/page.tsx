@@ -10,6 +10,7 @@ import Testimonials from '@/components/testimonials';
 import FAQ from '@/components/faq';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
+import ChatWidget from '@/components/chat-widget';
 
 const Navbar = dynamic(() => import('@/components/navbar'), {
   ssr: false,
@@ -30,6 +31,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
