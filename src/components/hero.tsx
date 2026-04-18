@@ -59,14 +59,6 @@ export default function Hero() {
         animate="visible"
       >
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-300 backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold-400 animate-pulse" />
-              Jasa Desain & Bangunan
-            </span>
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}

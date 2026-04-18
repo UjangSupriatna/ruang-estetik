@@ -47,9 +47,6 @@ export default function Footer() {
               <h3 className="font-[var(--font-playfair)] text-2xl font-bold text-white">
                 Ruangan Elegan
               </h3>
-              <p className="mt-1 text-sm text-gold-400">
-                Jasa Desain & Bangunan
-              </p>
             </div>
             <p className="text-sm leading-relaxed text-neutral-400">
               Mengubah ruangan impian Anda menjadi kenyataan dengan desain yang
